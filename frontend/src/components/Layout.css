@@ -1,0 +1,74 @@
+/* src/components/Layout.css */
+:root {
+  --sidebar-w: 64px;
+  --red-1: #b30000;
+  --red-2: #ff0000;
+  --red-3: #d30d0d;
+}
+
+/* content area */
+.layout-content {
+  padding-left: var(--sidebar-w);
+  min-height: 100vh;
+  background: #fff;
+}
+
+/* Top black info bar */
+.layout-top {
+  background: #000;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px 0 calc(var(--sidebar-w) + 16px);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.layout-top .top-left {
+  font-size: 15px;
+}
+
+.layout-top .top-right {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* imagine bar / header area */
+.layout-imagine {
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: calc(var(--sidebar-w) + 16px);
+  padding-right: 22px;
+  background: linear-gradient(
+    90deg,
+    #000 0%,
+    #4a0000 20%,
+    var(--red-1) 48%,
+    var(--red-2) 100%
+  );
+}
+
+/* ⭐ Logo styling */
+.imagine-logo {
+  height: 100px;       /* Adjust as needed */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Right-side small text */
+.imagine-right {
+  font-size: 30px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Page spacing under header */
+.layout-content > * {
+  padding-top: 20px;
+}

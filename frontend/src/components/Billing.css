@@ -1,0 +1,379 @@
+/* src/components/Billing.css — white boxes, black text/borders, red primary buttons */
+
+.billing-shell {
+  --sidebar-w: 64px;
+  min-height: 100vh;
+  padding-left: var(--sidebar-w);
+  background: #000;
+  color: #000; /* default page text will be black inside white boxes */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+.billing-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+.billing-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.billing-left h2 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+.billing-sub {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.7);
+  margin-top: 6px;
+}
+
+/* layout grid: left column (forms) + right column (billing) */
+.billing-body {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 22px;
+  align-items: start;
+}
+
+/* basic boxes — white background, black text & border */
+.box {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.customer-box {
+  margin-bottom: 18px;
+}
+.product-box {
+  margin-bottom: 18px;
+}
+
+/* Make all rows inside Select Mobile / Select Accessory behave the same */
+.product-box .row {
+  display: flex;
+  gap: 12px;             /* same horizontal gap as the first row */
+}
+
+/* Every select / input with this class shares the row equally */
+.product-box .row > .sku-select {
+  flex: 1 1 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.box h4 {
+  margin: 0 0 12px 0;
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* inputs */
+.cust-input,
+.cust-textarea,
+.sku-select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  box-sizing: border-box;
+}
+
+.cust-textarea {
+  width: 100%;
+  min-height: 72px;
+  resize: none;
+}
+
+/* grid & rows */
+.grid-ct {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  color: #000;
+}
+
+/* row is flex; controls inside should share width */
+.row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+/* allow sku-selects to shrink so 3 fit in one row */
+.row .sku-select {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* make the selects visually consistent */
+.sku-select {
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+/* primary red buttons: Add, Generate Bill, Apply edits */
+.btn-add,
+.btn-pay {
+  background: linear-gradient(90deg, #ff3b3b, #cf0d0d);
+  color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+/* Clear / Edit buttons: white bg, black text, black border */
+.btn-clear {
+  background: #fff;
+  border: 1px solid #000;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #000;
+  font-weight: 600;
+}
+
+/* readonly invoice input — white with black border/text */
+.readonly-input {
+  width: 220px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+}
+
+/* summary fields in billing panel */
+.summary-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: #000;
+  padding: 10px 0;
+  border-bottom: 1px dashed #000;
+}
+
+.summary-field.big {
+  font-size: 18px;
+  font-weight: 800;
+  border-top: 1px dashed #000;
+  margin-top: 6px;
+  padding-top: 10px;
+  background: transparent;
+}
+
+/* small numeric inputs (discount, tax) */
+.small-input {
+  width: 90px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  background: #ffffff;
+  color: #000;
+}
+
+/* chips for product preview */
+.product-chips {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  overflow: visible;
+}
+
+.chip {
+  background: #ffffff;
+  border: 1px solid #000;
+  padding: 8px 10px;
+  border-radius: 8px;
+  min-width: 110px;
+  box-sizing: border-box;
+}
+
+.chip-label {
+  font-size: 12px;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.chip-value {
+  font-weight: 700;
+  font-size: 13px;
+  color: #000;
+  word-break: break-word;
+}
+
+/* cart mini list removed (no rules) */
+
+/* small misc */
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  font-weight: 700;
+  cursor: pointer;
+}
+.payment-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+  color: #000;
+}
+.payment-row label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #000;
+  color: #000;
+}
+.action-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+/* payment-panel area styling */
+.payment-panel {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px dashed rgba(0,0,0,0.06);
+  background: #fff;
+}
+
+/* circular (round) custom checkbox for Show QR */
+.round-checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #bdbdbd;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  cursor: pointer;
+  transition: all 120ms ease;
+  background: #fff;
+  box-shadow: none;
+  position: relative;
+}
+
+/* hover/focus */
+.round-checkbox:hover {
+  border-color: #999;
+}
+.round-checkbox:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+}
+
+/* checked appearance: red circular background with small white dot */
+.round-checkbox:checked {
+  border-color: transparent;
+  background:
+    radial-gradient(circle at center, rgba(255,255,255,1) 28%, rgba(255,255,255,0) 29%),
+    linear-gradient(90deg, #ff3b3b, #cf0d0d);
+}
+
+/* ---- Bill dialog modal ---- */
+
+.bill-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.bill-modal {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #000;
+  max-width: 900px;
+  width: 95%;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+  padding: 16px 20px 20px;
+}
+
+.bill-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.bill-modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.bill-modal-close {
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+
+label > .round-checkbox {
+  margin-right: 8px;
+}
+
+/* responsive */
+@media (max-width: 1060px) {
+  .billing-body {
+    grid-template-columns: 1fr;
+  }
+  .right-col {
+    order: 2;
+  }
+  .left-col {
+    order: 1;
+  }
+  .product-chips {
+    flex-wrap: wrap;
+  }
+  .chip {
+    min-width: 140px;
+    flex: 1 1 auto;
+  }
+}

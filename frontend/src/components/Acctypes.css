@@ -1,0 +1,84 @@
+.acctypes-container {
+  padding: 30px;
+  background: #f4f6fb;
+  min-height: 100vh;
+}
+
+.back-btn {
+  background: #ffffff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 4px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+/* MAIN LIST PANEL – similar to your variants page right section */
+.types-panel {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 18px 22px;
+  max-width: 860px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+/* each type as a pill-shaped row */
+.type-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  font-size: 15px;
+  margin-bottom: 10px;
+  transition: background 0.15s ease, transform 0.1s ease,
+    box-shadow 0.15s ease;
+}
+
+.type-row:last-child {
+  margin-bottom: 0;
+}
+
+.type-row:hover {
+  background: #e5e7eb;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
+}
+
+.type-row-label {
+  font-weight: 500;
+  color: #111827;
+}
+
+/* stock on the right, like "Stock: 0" in blue */
+.type-row-stock {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.type-row-stock-text {
+  color: #4b5563;
+}
+
+.type-row-stock-value {
+  font-weight: 600;
+  color: #2563eb; /* blue, like your demo */
+}
