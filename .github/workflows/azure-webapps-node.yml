@@ -43,7 +43,7 @@ jobs:
         
 
     - name: Skip build (handled by Azure) 
-      run: echo "Build will run on Azure App Service"|
+      run: echo "Build will run on Azure App Service"
         
 
     - name: Upload artifact for deployment job
