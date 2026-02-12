@@ -1,0 +1,144 @@
+.readymob {
+  padding: 16px 24px;
+  background: #ffffff;
+}
+
+/* ===================== SEARCH BAR ===================== */
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  margin-top: 6px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+.btn-search {
+  background: #e10000;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-reset {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-search:hover,
+.btn-reset:hover {
+  opacity: 0.9;
+}
+
+/* ===================== TABLE ===================== */
+
+.btn--delete {
+  background: #555;
+  border: 1px solid #000;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn--delete:hover {
+  background: #333;
+}
+
+
+.readymob__table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.readymob__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+  font-size: 14px;
+}
+
+.readymob__table thead {
+  background: linear-gradient(90deg, #b30000, #ff0000);
+  color: #ffffff;
+}
+
+.readymob__table th,
+.readymob__table td {
+  padding: 10px 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.readymob__table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.readymob__table tbody tr:hover {
+  background: #fff3f3;
+}
+
+/* Empty State */
+.readymob__empty {
+  text-align: center;
+  padding: 22px;
+  color: #777;
+  font-size: 14px;
+}
+
+/* Button */
+.btn {
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn--billing {
+  background: #e10000;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn--billing:hover {
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .btn {
+    font-size: 11px;
+    padding: 5px 9px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .btn-search,
+  .btn-reset {
+    width: 100%;
+  }
+}

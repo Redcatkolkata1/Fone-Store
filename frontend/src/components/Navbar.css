@@ -1,0 +1,250 @@
+/* src/components/Navbar.css */
+
+/* --------------------------------
+   BASE SIDEBAR
+----------------------------------*/
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  width: 70px;
+  transition: all 0.28s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.sidebar.open {
+  width: 240px;
+}
+
+/* --------------------------------
+   LOGO SECTION
+----------------------------------*/
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 15px;
+}
+
+.logo {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: 700;
+  color: #e63946;
+  white-space: nowrap;
+}
+
+/* --------------------------------
+   COLLAPSE BUTTON
+----------------------------------*/
+.collapse-btn-wrapper {
+  padding: 8px 20px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+}
+
+.sidebar.collapsed .collapse-btn-wrapper {
+  justify-content: center;
+}
+
+.collapse-btn-wrapper:hover {
+  color: #e63946;
+}
+
+.toggle-icon {
+  font-size: 20px;
+}
+
+.collapse-label {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* --------------------------------
+   MENU ITEMS
+----------------------------------*/
+.menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+/* ensure links inherit styles (NavLink) */
+.menu-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+}
+
+/* avoid white rectangle on expanded submenu — make backgrounds transparent */
+.menu-item:hover {
+  background-color: #111;
+  color: #e63946;
+}
+
+.menu-icon {
+  font-size: 18px;
+}
+
+.menu-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* --------------------------------
+   INVENTORY DROPDOWN
+----------------------------------*/
+.inventory-item {
+  justify-content: space-between;
+  border: none;
+  background: none;
+  padding-bottom: 4px !important;;
+}
+
+.menu-item .inventory-item {
+  justify-content: space-between;
+  border: none;
+  background: none;
+}
+
+.inventory-main {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.inventory-arrow {
+  font-size: 12px;
+}
+
+/* Submenu — make transparent and remove any default white background.
+   This prevents that large white rounded box showing up.
+*/
+.submenu {
+  list-style: none;
+  padding: 4px 0 0 38px; /* indent under Inventory icon */
+  margin: 0 0 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* submenu items are simple links (no background) */
+.submenu-item {
+  padding: 6px 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #ffffff;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.submenu-link {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.submenu-item:hover {
+  color: #e63946;
+}
+
+/* --------------------------------
+   SEARCH BAR STYLE
+----------------------------------*/
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 20px;
+}
+
+.search-icon {
+  font-size: 16px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+/* --------------------------------
+   BOTTOM SECTION
+----------------------------------*/
+.bottom-section {
+  margin-top: auto;
+  padding: 20px;
+  border-top: 1px solid #222;
+}
+
+.bottom-item {
+  padding: 0;
+}
+
+.bottom-section .menu-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.bottom-section li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.bottom-section li:hover {
+  color: #e63946;
+}
+
+/* When collapsed hide submenu list entirely (so it doesn't float) */
+.sidebar.collapsed .submenu {
+  display: none;
+}

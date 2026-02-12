@@ -1,0 +1,78 @@
+/* ===== accessories page layout ===== */
+.acc-shell {
+  width: 100%;
+  padding-left: var(--sidebar-w);
+  padding-top: 30px;
+  background: #f5f6fa;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.acc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35px 20px;
+}
+
+.acc-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* ===== grid style ===== */
+.acc-body {
+  padding: 0 35px 50px;
+}
+
+.acc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 22px;
+}
+
+/* ===== cards ===== */
+.acc-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.06);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.acc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.09);
+}
+
+.acc-card-name {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.acc-card-footer {
+  margin-top: 12px;
+  background: #f3f3f3;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  font-size: 15px;
+}
+
+.acc-card-stock-label {
+  color: #444;
+}
+
+.acc-card-stock-value {
+  font-weight: 700;
+  color: red;
+}

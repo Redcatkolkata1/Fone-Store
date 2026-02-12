@@ -1,0 +1,336 @@
+/* src/components/AddInventory.css */
+
+/* container that respects the left sidebar width */
+.add-inv-shell {
+  --sidebar-w: 64px;
+  min-height: 100vh;
+  padding-left: var(--sidebar-w);
+  background: #000;
+  box-sizing: border-box;
+}
+
+/* center column */
+.add-inv-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 20px;
+}
+
+/* row with two columns */
+.add-inv-row {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* card common styles */
+.add-inv-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+}
+
+/* header bar (red) */
+.add-inv-card-header {
+  background: linear-gradient(90deg, #ff3b3b 0%, #cf0d0d 100%);
+  color: #fff;
+  padding: 12px 18px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* LEFT: form card specifics */
+.add-inv-form {
+  height: 640px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* scrollable form body */
+.add-inv-form-body {
+  padding: 18px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* checkbox rows for Add Mobile / Add Accessories */
+.checkbox-row {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* optional: accessory line inside inventory card */
+.inventory-accessory-line {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #444;
+}
+
+
+/* selects & inputs */
+.field-label select,
+.field-label input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+  font-size: 14px;
+  box-sizing: border-box;
+  background: #fff;
+  appearance: none;
+}
+
+/* spacing for fields */
+.field-label {
+  display: block;
+}
+
+/* form action buttons */
+.form-actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 12px;
+  padding-bottom: 18px; /* give room at the bottom to scroll */
+}
+
+.btn-primary {
+  background: #ff1e1e;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  min-width: 100px;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #111;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+/* RIGHT: inventory list styles */
+.add-inv-list {
+  height: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative; /* for pinned footer */
+}
+
+/* list body scrolls independently */
+.add-inv-list-body {
+  padding: 20px;
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* placeholder */
+.empty-placeholder {
+  color: #8b8b8b;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* inventory list container */
+.inventory-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-bottom: 28px; /* space for pinned submit */
+}
+
+/* single inventory item card */
+.inventory-item-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  border: 1px solid rgba(239, 68, 68, 0.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+/* left block (details) */
+.inventory-item-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.inventory-title {
+  font-size: 14px;
+  color: #111;
+}
+
+.inventory-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
+  flex-wrap: wrap;
+}
+
+/* small tag for variant */
+.meta-pill {
+  background: rgba(239,68,68,0.08);
+  color: #b91c1c;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* mrp */
+.meta-mrp {
+  color: #444;
+  font-weight: 600;
+}
+
+/* condition text with subtle color */
+.cond {
+  font-weight: 700;
+  padding-left: 6px;
+}
+
+/* color variations for condition */
+.cond.gold { color: #b87a00; }
+.cond.silver { color: #6b7280; }
+.cond.platinum { color: #4b5563; }
+
+.inventory-imei-block {
+  font-size: 12px;
+  color: #666;
+  word-break: break-word;
+}
+
+/* actions */
+.inventory-item-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* small action buttons */
+.btn-edit,
+.btn-delete {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  min-width: 64px;
+}
+
+/* edit = red filled, delete = outlined */
+.btn-edit {
+  background: #ff3b3b;
+  color: #fff;
+}
+
+.btn-delete {
+  background: transparent;
+  border: 1px solid #ddd;
+  color: #111;
+}
+
+/* bottom pinned Submit button in the inventory card */
+.add-inv-list-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* only child buttons clickable */
+}
+
+.inventory-footer-actions {
+  pointer-events: all;
+  display: flex;
+  gap: 12px;
+}
+
+.btn-clear-inventory {
+  background: #ffffff;
+  color: #cf0d0d;
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: 1px solid #cf0d0d;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.upload-footer {
+  padding: 0 20px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.upload-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #ddd;
+  border: 1px solid #ddd;
+  font-size: 13px;
+  cursor: pointer;
+  background: #fa0404;
+  user-select: none;
+}
+
+
+.btn-submit-inventory {
+  pointer-events: all;
+  background: linear-gradient(90deg,#ff3b3b 0%, #cf0d0d 100%);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(207,13,13,0.18);
+  cursor: pointer;
+}
+
+/* responsive */
+@media (max-width: 1060px) {
+  .add-inv-row {
+    grid-template-columns: 1fr;
+  }
+  .add-inv-list {
+    order: 2;
+    height: 360px;
+  }
+  .add-inv-form {
+    height: auto;
+  }
+}

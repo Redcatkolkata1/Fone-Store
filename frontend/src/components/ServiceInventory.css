@@ -1,0 +1,176 @@
+/* src/components/ServiceInventory.css */
+
+/* top-level shell that respects the sidebar */
+.serinv-shell {
+  --sidebar-w: 64px;
+  min-height: 100vh;
+  padding-left: var(--sidebar-w);
+  box-sizing: border-box;
+  background: #000; /* black background behind the card */
+  color: #fff;
+  font-family: system-ui, sans-serif;
+}
+
+/* container centers the card */
+.serinv-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 20px 40px;
+}
+
+/* white card */
+.serinv-summary-box {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+/* red header bar */
+.serinv-summary-header {
+  background: linear-gradient(90deg, #ff3b3b 0%, #cf0d0d 100%);
+  color: #fff;
+  padding: 14px 20px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* make title + Add button on one row */
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Add button */
+.add-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.12s ease;
+}
+
+.add-btn:hover {
+  background: #b30000;
+  transform: translateY(-1px);
+}
+
+/* row containing tabs */
+.serinv-tabs-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 20px;
+  background: transparent;
+  justify-content: space-between;
+}
+
+/* tabs NAV */
+.serinv-tabs {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* individual tab */
+.serinv-tabs .tab {
+  background: #111;
+  color: #fff;
+  padding: 12px 26px;
+  margin-right: 6px;
+  border-radius: 2px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* active selected tab */
+.serinv-tabs .tab.active {
+  background: linear-gradient(90deg, #9b0d0d 0%, #be1e1e 100%);
+  transform: translateY(-4px);
+  border-radius: 0;
+}
+
+/* thin red underline below the tabs row */
+.serinv-underline {
+  height: 2px;
+  background: linear-gradient(90deg, #b30000 0%, #ff0000 100%);
+  margin: 0 18px 12px;
+  border-radius: 1px;
+}
+
+/* body area — large white interior */
+.serinv-body {
+  min-height: 380px;
+  padding: 24px 20px 36px;
+  background: transparent;
+  color: #111;
+}
+
+/* empty placeholder text styling */
+.empty-placeholder {
+  color: #1f2937;
+  font-size: 16px;
+  padding: 22px 8px;
+}
+
+/* modal overlay and box */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-box {
+  background: #fff;
+  width: 60%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: #e30000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* responsive adjustments */
+@media (max-width: 900px) {
+  .serinv-tabs-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .serinv-tabs {
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+
+  .modal-box {
+    width: 92%;
+  }
+}

@@ -1,0 +1,139 @@
+/* src/components/AllInventory.css */
+
+/* respect sidebar width (same approach as other pages) */
+.accinv-shell {
+  --sidebar-w: 64px;
+  min-height: 100vh;
+  padding-left: var(--sidebar-w);
+  box-sizing: border-box;
+  background: #000; /* keep the black background */
+  color: #fff;
+  font-family: system-ui, sans-serif;
+}
+
+.accinv-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 20px 40px;
+}
+
+/* Card that holds header/tabs/body (white interior, red top bar) */
+.accinv-summary-box {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+/* red header bar - matches your existing gradient elsewhere */
+.accinv-summary-header {
+  background: linear-gradient(90deg, #ff3b3b 0%, #cf0d0d 100%);
+  color: #fff;
+  padding: 14px 20px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* row containing tabs and filter */
+.accinv-tabs-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 20px;
+  background: transparent;
+  justify-content: space-between;
+}
+
+/* tabs nav */
+.accinv-tabs {
+  display: flex;
+  gap: 0; /* we'll show separators visually */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* individual tab */
+.accinv-tabs .tab {
+  background: #111;           /* dark base so label stands out on white card */
+  color: #fff;
+  border: none;
+  padding: 12px 26px;
+  margin-right: 6px;
+  border-radius: 2px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: none;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+/* active (selected) tab style like screenshot: red-filled with small notch/underline */
+.accinv-tabs .tab.active {
+  background: linear-gradient(90deg, #9b0d0d 0%, #be1e1e 100%);
+  color: #fff;
+  transform: translateY(-4px);
+  border-radius: 0;
+}
+
+/* action area: filter button */
+.accinv-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* red rounded filter button */
+.btn-filter {
+  background: transparent;
+  color: #be1e1e;
+  border: 1px solid #be1e1e;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  background-image: none;
+}
+
+/* when active (Filter All) show filled red bubble */
+.btn-filter.active {
+  background: linear-gradient(90deg, #ff3b3b 0%, #cf0d0d 100%);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(203, 20, 20, 0.15);
+}
+
+/* thin dividing red underline below the tab row matching screenshot */
+.accinv-underline {
+  height: 2px;
+  background: linear-gradient(90deg, #b30000 0%, #ff0000 100%);
+  margin: 0 18px 12px;
+  border-radius: 1px;
+}
+
+/* Body area - large white area same as screenshot */
+.accinv-body {
+  min-height: 380px; /* leave lots of blank area like screenshot */
+  padding: 24px 20px 36px;
+  background: transparent;
+  color: #111;
+}
+
+/* Empty placeholder styling */
+.empty-placeholder {
+  color: #1f2937;
+  font-size: 16px;
+  padding: 22px 8px;
+}
+
+/* Responsive: stack tabs if too narrow */
+@media (max-width: 900px) {
+  .accinv-tabs-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .accinv-tabs {
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+}

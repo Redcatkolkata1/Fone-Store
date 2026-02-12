@@ -1,0 +1,116 @@
+/* Container */
+.tfbmob {
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+/* Search */
+.tfbmob__search-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tfbmob__search-bar input[type="text"] {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.btn-search,
+.btn-reset,
+.btn-cancel {
+  padding: 8px 14px;
+  border-radius: 4px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-search {
+  background: #1f2937;
+  color: #ffffff;
+}
+
+.btn-reset {
+  background: #6b7280;
+  color: #ffffff;
+}
+
+.btn-cancel {
+  background: #b91c1c;
+  color: #ffffff;
+}
+
+/* Table */
+.tfbmob__table-wrapper {
+  margin-top: 8px;
+  overflow-x: auto;
+}
+
+.tfbmob__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tfbmob__table thead {
+  background: #b91c1c;
+  color: #ffffff;
+}
+
+.tfbmob__table th,
+.tfbmob__table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.tfbmob__table tbody tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.tfbmob__empty {
+  padding: 20px;
+  text-align: center;
+  color: #6b7280;
+}
+
+/* Status badge */
+.status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Specific colors based on status value from DB */
+
+.status-ready {
+  background: #16a34a;  /* green */
+  color: #ffffff;
+}
+
+.status-sold {
+  background: #dc2626;  /* red */
+  color: #ffffff;
+}
+
+/* "tfb" is Transferred For Billing → label shown as "Not Billed" */
+.status-tfb {
+  background: #333;  /* orange */
+  color: #ffffff;
+}
+
+/* fallback / unknown */
+.status-unknown {
+  background: #6b7280;
+  color: #ffffff;
+}

@@ -1,0 +1,144 @@
+/* Full-screen layout */
+.login-container {
+  width: 100%;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login box grows wider and responsive */
+.login-box {
+  width: 85%;               /* increased */
+  height: 75vh;             /* increased height */
+  background: white;
+  border-radius: 30px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+}
+
+/*****************************
+ LEFT SECTION
+******************************/
+.left-section {
+  width: 55%;               /* wider for spreading */
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lock-img {
+  width: 70%;
+  object-fit: contain;
+}
+
+/*****************************
+ RIGHT SECTION
+******************************/
+.right-section {
+  width: 45%;                              /* right section proportional */
+  background: #c60000;
+  padding: 45px 60px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-title {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.redcat-logo {
+  width: 45px;
+}
+
+.imagine-logo {
+  width: 200px;
+  margin-top: 10px;
+}
+
+.subtext {
+  margin-top: -5px;
+  font-size: 14px;
+}
+
+/*****************************
+ FORM AREA
+******************************/
+.login-form {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-form label {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.login-form input {
+  border: none;
+  border-bottom: 2px solid white;
+  background: transparent;
+  outline: none;
+  color: white;
+  padding: 7px 5px;
+  font-size: 15px;
+}
+
+.error-text {
+  color: #ffe5e5;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Button */
+.login-btn {
+  margin-top: 25px;
+  background: black;
+  border: none;
+  padding: 12px 0;
+  color: white;
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #111;
+}
+
+/*****************************
+ RESPONSIVE SUPPORT
+******************************/
+@media (max-width: 1000px) {
+  .login-box {
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+  }
+  .left-section,
+  .right-section {
+    width: 100%;
+    height: 50vh;
+  }
+  .lock-img {
+    width: 45%;
+  }
+}
