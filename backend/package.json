@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
+=======
+    "start": "node server.js",
+>>>>>>> 8c93e3b9f1bdd4cbb096647dc86598597feff1cd
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
