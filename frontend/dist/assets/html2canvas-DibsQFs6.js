@@ -1,0 +1,1 @@
+import{t as e}from"./index-B-p7r_YK.js";export default e();
