@@ -102,7 +102,7 @@ router.get("/", async (req, res) => {
     if (model) filter.model = model;
     if (variant) filter.variant = variant;
 
-    const mobiles = await Mobile.find(filter).sort({ createdAt: -1 });
+    const mobiles = await Mobile.find(filter);
     res.json(mobiles);
   } catch (error) {
     console.error("Error fetching mobiles:", error);
