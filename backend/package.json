@@ -2,13 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-<<<<<<< HEAD
-=======
-    "start": "node server.js",
->>>>>>> 8c93e3b9f1bdd4cbb096647dc86598597feff1cd
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
