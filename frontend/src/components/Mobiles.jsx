@@ -15,7 +15,7 @@ function Mobiles({ sidebarWidth = 64 }) {
   useEffect(() => {
     const fetchByStatus = async (status) => {
       const res = await fetch(
-        `fetch(`/api/mobiles?status=${status}`)`
+      (`/api/mobiles?status=${status}`
       );
       if (!res.ok) {
         throw new Error(`Failed to fetch mobiles with status=${status}`);
