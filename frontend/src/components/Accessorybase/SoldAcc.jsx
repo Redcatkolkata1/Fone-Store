@@ -4,7 +4,7 @@ import "./SoldAcc.css";
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
 
-const API_URL = "http://localhost:5000/api/soldaccessories";
+const API_URL = "/api/soldaccessories";
 
 const SoldAcc = () => {
   const [searchTerm, setSearchTerm] = useState("");
