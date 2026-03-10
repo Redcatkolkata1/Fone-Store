@@ -413,7 +413,7 @@ export default function AddInventory({ sidebarWidth = 64 }) {
       if (mobilesToSend.length) {
         await Promise.all(
           mobilesToSend.map((item) =>
-            fetch("http://localhost:5000/api/mobiles", {
+            fetch("/api/mobiles", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
@@ -443,7 +443,7 @@ export default function AddInventory({ sidebarWidth = 64 }) {
       if (accessoriesToSend.length) {
         await Promise.all(
           accessoriesToSend.map((item) =>
-            fetch("http://localhost:5000/api/accessories", {
+            fetch("/api/accessories", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
