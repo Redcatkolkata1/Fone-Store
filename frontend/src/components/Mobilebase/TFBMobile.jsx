@@ -19,7 +19,7 @@ const TFBMobile = () => {
     setError("");
     try {
       // Added timestamp ?t=... to ensure browser doesn't serve cached old data
-      const res = await fetch(`http://localhost:5000/api/mobiles?status=tfb&t=${Date.now()}`);
+      const res = await fetch(`/api/mobiles?status=tfb&t=${Date.now()}`);
       if (!res.ok) throw new Error("Failed to fetch transferred mobiles");
       const data = await res.json();
       setMobiles(Array.isArray(data) ? data : []);
@@ -79,7 +79,7 @@ const TFBMobile = () => {
     if (!window.confirm("Cancel transfer for billing for this mobile?")) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/mobiles/${mobileId}/cancel`, {
+      const res = await fetch(`/api/mobiles/${mobileId}/cancel`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
       });
