@@ -109,8 +109,8 @@ export default function Transactions({ sidebarWidth = 64 }) {
 
       try {
         const [mobRes, accRes] = await Promise.all([
-          fetch("http://localhost:5000/api/soldmobiles"),
-          fetch("http://localhost:5000/api/soldaccessories"),
+          fetch("/api/soldmobiles"),
+          fetch("/api/soldaccessories"),
         ]);
 
         if (!mobRes.ok) throw new Error("Failed to fetch sold mobiles");
