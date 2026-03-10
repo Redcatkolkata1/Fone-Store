@@ -11,7 +11,7 @@ const ReadyMobile = () => {
   useEffect(() => {
     const fetchMobiles = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/mobiles?status=ready");
+        const res = await fetch("/api/mobiles?status=ready");
 
         if (!res.ok) {
           throw new Error("Failed to fetch ready mobiles");
@@ -50,7 +50,7 @@ const ReadyMobile = () => {
 
   const handleTransferForBilling = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/mobiles/${id}/transfer`, {
+      const res = await fetch(`/api/mobiles/${id}/transfer`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +81,7 @@ const ReadyMobile = () => {
     if (!ok) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/mobiles/${id}`, {
+      const res = await fetch(`/api/mobiles/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
