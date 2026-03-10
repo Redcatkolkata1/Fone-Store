@@ -13,15 +13,20 @@ function Mobiles({ sidebarWidth = 64 }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchByStatus = async (status) => {
-      const res = await fetch(
-      (`/api/mobiles?status=${status}`
-      ),
-      if (!res.ok) {
-        throw new Error(`Failed to fetch mobiles with status=${status}`);
-      }
-      return res.json();
-    };
+useEffect(() => {
+  const fetchByStatus = async (status) => {
+    const res = await fetch(`/api/mobiles?status=${status}`);
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch mobiles with status=${status}`);
+    }
+
+    const data = await res.json();
+    return data;
+  };
+
+  fetchByStatus("ready");
+}, []);
 
     const loadStock = async () => {
       setLoading(true);
