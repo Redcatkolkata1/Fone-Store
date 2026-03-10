@@ -90,7 +90,7 @@ const ReadyAcc = () => {
       return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/accessories/${id}`, {
+      const res = await fetch(`/api/accessories/${id}`, {
         method: "DELETE",
       });
 
