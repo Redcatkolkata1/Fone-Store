@@ -10,7 +10,7 @@ const TFBAcc = () => {
     const fetchTFBAccessories = async () => {
       try {
         const res = await fetch(
-          "http://localhost:5000/api/accessories?status=tfb"
+          "/api/accessories?status=tfb"
         );
 
         if (!res.ok) {
@@ -57,7 +57,7 @@ const TFBAcc = () => {
   const handleCancelTransfer = async (id) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/accessories/${id}/cancel-transfer`,
+        `/api/accessories/${id}/cancel-transfer`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
