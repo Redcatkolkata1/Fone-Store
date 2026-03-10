@@ -16,7 +16,7 @@ function Mobiles({ sidebarWidth = 64 }) {
     const fetchByStatus = async (status) => {
       const res = await fetch(
       (`/api/mobiles?status=${status}`
-      ),
+      ):
       if (!res.ok) {
         throw new Error(`Failed to fetch mobiles with status=${status}`);
       }
