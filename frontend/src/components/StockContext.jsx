@@ -37,8 +37,8 @@ export function StockProvider({ children }) {
   const refreshMobileStock = useCallback(async () => {
     try {
       const [ready, tfb] = await Promise.all([
-        safeFetchList("http://localhost:5000/api/mobiles?status=ready"),
-        safeFetchList("http://localhost:5000/api/mobiles?status=tfb"),
+        safeFetchList("/api/mobiles?status=ready"),
+        safeFetchList("/api/mobiles?status=tfb"),
       ]);
 
       const list = [...ready, ...tfb];
@@ -60,8 +60,8 @@ export function StockProvider({ children }) {
   const refreshAccessoryStock = useCallback(async () => {
     try {
       const [ready, tfb] = await Promise.all([
-        safeFetchList("http://localhost:5000/api/accessories?status=ready"),
-        safeFetchList("http://localhost:5000/api/accessories?status=tfb"),
+        safeFetchList("/api/accessories?status=ready"),
+        safeFetchList("/api/accessories?status=tfb"),
       ]);
 
       const list = [...ready, ...tfb];
