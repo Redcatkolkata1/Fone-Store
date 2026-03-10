@@ -12,7 +12,7 @@ const ReadyAcc = () => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          "http://localhost:5000/api/accessories?status=ready"
+          "/api/accessories?status=ready"
         );
 
         if (!res.ok) {
@@ -60,7 +60,7 @@ const ReadyAcc = () => {
   const handleBillingTransfer = async (id) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/accessories/${id}/transfer`,
+        `/api/accessories/${id}/transfer`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
