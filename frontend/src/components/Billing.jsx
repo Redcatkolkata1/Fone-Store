@@ -921,7 +921,7 @@ export default function Billing({ sidebarWidth = 64 }) {
   useEffect(() => {
     const fetchTfbMobiles = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/mobiles?status=tfb");
+        const res = await fetch("/api/mobiles?status=tfb");
         const data = await res.json();
 
         // 🔒 SAFETY: Billing sees ONLY what TFBMobile sees
