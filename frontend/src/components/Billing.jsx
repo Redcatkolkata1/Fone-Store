@@ -942,7 +942,7 @@ export default function Billing({ sidebarWidth = 64 }) {
   useEffect(() => {
     const fetchTfbAccessories = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/accessories?status=tfb");
+        const res = await fetch("/api/accessories?status=tfb");
         if (!res.ok) throw new Error("Failed to fetch TFB accessories for billing");
         const data = await res.json();
         setTfbAccessories(Array.isArray(data) ? data : []);
@@ -1439,7 +1439,7 @@ const addAccessoryToCart = ({ name, type, modelNumber, price, qty, sku }) => {
     try {
       if (hasMobileItems) {
         // 1) Save mobile bill
-        const res = await fetch("http://localhost:5000/api/soldmobiles/mobile-bill", {
+        const res = await fetch("/api/soldmobiles/mobile-bill", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
@@ -1456,7 +1456,7 @@ const addAccessoryToCart = ({ name, type, modelNumber, price, qty, sku }) => {
       }
 
       if (hasAccessoryItems) {
-        const res = await fetch("http://localhost:5000/api/soldaccessories/accessory-bill", {
+        const res = await fetch("/api/soldaccessories/accessory-bill", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
