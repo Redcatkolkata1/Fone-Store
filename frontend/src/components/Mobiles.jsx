@@ -13,23 +13,20 @@ function Mobiles({ sidebarWidth = 64 }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-useEffect(() => {
-  const fetchByStatus = async (status) => {
-    const res = await fetch(`/api/mobiles?status=${status}`);
+    const fetchByStatus = async (status) => {
+      const res = await fetch(`/api/mobiles?status=${status}`);
 
-    if (!res.ok) {
-      throw new Error(`Failed to fetch mobiles with status=${status}`);
-    }
+      if (!res.ok) {
+        throw new Error(`Failed to fetch mobiles with status=${status}`);
+      }
 
-    const data = await res.json();
-    return data;
-  };
-
-  fetchByStatus("ready");
-}, []);
+      const data = await res.json();
+      return data;
+    };
 
     const loadStock = async () => {
       setLoading(true);
+
       try {
         // count both ready + tfb as "available"
         const [ready, tfb] = await Promise.all([
@@ -43,9 +40,11 @@ useEffect(() => {
         ];
 
         const map = {};
+
         allInStock.forEach((m) => {
           const brand = (m.brand || "").trim();
           if (!brand) return;
+
           map[brand] = (map[brand] || 0) + 1;
         });
 
@@ -64,7 +63,6 @@ useEffect(() => {
   }, [refreshMobileStock]);
 
   const handleBrandClick = (brandName) => {
-    // URL slug is lowercase brand name, consistent with BrandPage
     navigate(`/brands/${encodeURIComponent(brandName.toLowerCase())}`);
   };
 
